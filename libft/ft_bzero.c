@@ -6,21 +6,22 @@
 /*   By: amaisonn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 14:03:54 by amaisonn          #+#    #+#             */
-/*   Updated: 2023/02/03 14:21:39 by amaisonn         ###   ########.fr       */
+/*   Updated: 2023/02/06 18:29:27 by amaisonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
 	char	*temp;
-	int	i;
+	size_t	i;
 
 	i = 0;
 	temp = s;
 	while(n > i)
 	{
-		temp++ = 0;
+		*temp++ = 0;
 		i++;
 	}
-	return (0);
 }
