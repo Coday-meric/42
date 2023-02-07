@@ -1,38 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amaisonn <amaisonn@student.42perpignan.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/07 13:58:09 by amaisonn          #+#    #+#             */
-/*   Updated: 2023/02/07 14:02:48 by amaisonn         ###   ########.fr       */
+/*   Created: 2023/02/07 14:01:46 by amaisonn          #+#    #+#             */
+/*   Updated: 2023/02/07 17:55:32 by amaisonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	int	i;
-	int	res;
-	int	signe;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
-	res = 0;
-	signe = 1;
-	while (nptr[i] == 32)
-		i++;
-	if (nptr[i] == 45 || nptr[i] == 43)
+	j = 0;
+
+	if (!*little)
+		return ((char *)(big));
+	if (!*big)
+		return (NULL);
+	while (i < len)
 	{
-		if (nptr[i] == 45)
-			signe = -1;
+		if (big[i] == little[j])
+		{
+			while (big[i] == little[j] && big[i] != '\0' && i < len)
+			{
+				i++;
+				j++;
+			}	
+			if (little[j] == '\0')
+				return ((char *)(big + (i - j)));	
+		}
+		j = 0;
 		i++;
 	}
-	while (ft_isdigit(nptr[i]))
-	{
-		res = (res * 10) + (nptr[i] - 48);
-		i++;
-	}
-	return (res * signe);
+	return (NULL);
 }

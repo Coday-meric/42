@@ -6,7 +6,7 @@
 /*   By: amaisonn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 16:25:27 by amaisonn          #+#    #+#             */
-/*   Updated: 2023/02/06 18:24:18 by amaisonn         ###   ########.fr       */
+/*   Updated: 2023/02/07 15:57:50 by amaisonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_toupper(int c)
 {
-	if (ft_isalpha(c) == 0 && c < 97)
-		return (c);
-	return (c + 32);
+	if (ft_isalpha(c) && c >= 97)
+		return (c - 32);
+	return (c);
 }

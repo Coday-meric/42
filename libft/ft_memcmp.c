@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaisonn <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: amaisonn <amaisonn@student.42perpignan.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/03 15:00:07 by amaisonn          #+#    #+#             */
-/*   Updated: 2023/02/07 15:49:38 by amaisonn         ###   ########.fr       */
+/*   Created: 2023/02/07 13:59:40 by amaisonn          #+#    #+#             */
+/*   Updated: 2023/02/07 17:18:37 by amaisonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+int	ft_memcmp(const void *pointer1, const void *pointer2, size_t size)
 {
-	char	*d;
-	const char	*s;
 	size_t	i;
+	const unsigned char *ptn1;
+	const unsigned char *ptn2;
 
+	ptn1 = pointer1;
+	ptn2 = pointer2;
 	i = 0;
-	d = dest;
-	s = src;
-	if (s == NULL && d == NULL)
-		return (NULL);
-	if (d < s)
-		while (n-- > 0)
-			*(d++) = *(s++);
-	else
-		while (i++ <= n)
-			d[n - i] = s[n - i];
-	return (dest);
+	while (i < size)
+	{
+		if (ptn1[i] != ptn2[i])
+			return (ptn1[i] - ptn2[i]);
+		i++;
+	}
+	return (0);
 }

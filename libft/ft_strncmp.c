@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amaisonn <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: amaisonn <amaisonn@student.42perpignan.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/06 16:00:40 by amaisonn          #+#    #+#             */
-/*   Updated: 2023/02/07 16:32:33 by amaisonn         ###   ########.fr       */
+/*   Created: 2023/02/07 14:00:35 by amaisonn          #+#    #+#             */
+/*   Updated: 2023/02/07 17:03:47 by amaisonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int	i;
+	size_t	i;
 
-	i = ft_strlen(s);
-	while(i >= 0)
+	i = 0;	
+	while (i < n)
 	{
-		if ((unsigned char)s[i] == (unsigned char)c)
-			return ((char *)(s + i));
-		i--;
+		if (s1[i] != s2[i] || s1[i] == '\0' || s2[i] == '\0')
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		i++;
 	}
-	if ((unsigned char)c == '\0')
-		return ((char *)(s + i));
-	return (NULL);
+	return (0);
 }
