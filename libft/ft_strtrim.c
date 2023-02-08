@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amaisonn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/08 18:11:56 by amaisonn          #+#    #+#             */
-/*   Updated: 2023/02/09 00:16:07 by amaisonn         ###   ########.fr       */
+/*   Created: 2023/02/09 00:18:32 by amaisonn          #+#    #+#             */
+/*   Updated: 2023/02/09 00:24:29 by amaisonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		lens1;
-	int		lens2;
-	char	*res;
-
-	lens1 = ft_strlen(s1);
-	lens2 = ft_strlen(s2);
-	res = malloc((lens1 + lens2 + 1) * sizeof(char));
-	if (!res)
-		return (NULL);
-	ft_strlcpy(res, (char *)s1, lens1 + 1);
-	ft_strlcat(res, (char *)s2, lens2 + lens1 + 1);
-	return (res);
+	
 }
