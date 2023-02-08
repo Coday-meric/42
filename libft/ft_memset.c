@@ -6,7 +6,7 @@
 /*   By: amaisonn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 11:31:43 by amaisonn          #+#    #+#             */
-/*   Updated: 2023/02/03 13:57:51 by amaisonn         ###   ########.fr       */
+/*   Updated: 2023/02/08 13:15:46 by amaisonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memset(void *s, int c, size_t n)
 
 	i = 0;
 	temp = s;
-	while(i < n)
+	while (i < n)
 	{
 		*temp++ = c;
 		i++;

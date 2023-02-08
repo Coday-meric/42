@@ -6,7 +6,7 @@
 /*   By: amaisonn <amaisonn@student.42perpignan.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 13:58:42 by amaisonn          #+#    #+#             */
-/*   Updated: 2023/02/07 17:09:17 by amaisonn         ###   ########.fr       */
+/*   Updated: 2023/02/08 13:24:07 by amaisonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	i;
-	const unsigned char	*st;
-	unsigned char	ct;
+	size_t							i;
+	unsigned char					ct;
+	const unsigned char				*st;
 
 	ct = c;
 	st = s;

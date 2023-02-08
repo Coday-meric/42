@@ -6,7 +6,7 @@
 /*   By: amaisonn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 22:07:59 by amaisonn          #+#    #+#             */
-/*   Updated: 2023/02/07 22:29:02 by amaisonn         ###   ########.fr       */
+/*   Updated: 2023/02/08 13:11:54 by amaisonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 
 char	*ft_strdup(const char *src)
 {
+	int		lensrc;
 	char	*dest;
-	int	lensrc;
 
 	lensrc = ft_strlen(src) + 1;
 	dest = malloc(lensrc);
+	if (!dest)
+		return (NULL);
 	ft_strlcpy(dest, (char *)src, lensrc);
 	return (dest);
 }

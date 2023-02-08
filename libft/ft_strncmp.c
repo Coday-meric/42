@@ -6,7 +6,7 @@
 /*   By: amaisonn <amaisonn@student.42perpignan.fr  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 14:00:35 by amaisonn          #+#    #+#             */
-/*   Updated: 2023/02/07 17:03:47 by amaisonn         ###   ########.fr       */
+/*   Updated: 2023/02/08 13:20:57 by amaisonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
 
-	i = 0;	
+	i = 0;
 	while (i < n)
 	{
 		if (s1[i] != s2[i] || s1[i] == '\0' || s2[i] == '\0')

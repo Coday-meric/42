@@ -6,7 +6,7 @@
 /*   By: amaisonn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 14:03:54 by amaisonn          #+#    #+#             */
-/*   Updated: 2023/02/06 18:29:27 by amaisonn         ###   ########.fr       */
+/*   Updated: 2023/02/08 13:19:17 by amaisonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_bzero(void *s, size_t n)
 
 	i = 0;
 	temp = s;
-	while(n > i)
+	while (n > i)
 	{
 		*temp++ = 0;
 		i++;

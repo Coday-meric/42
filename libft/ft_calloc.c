@@ -6,7 +6,7 @@
 /*   By: amaisonn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/07 20:42:21 by amaisonn          #+#    #+#             */
-/*   Updated: 2023/02/07 21:52:03 by amaisonn         ###   ########.fr       */
+/*   Updated: 2023/02/08 13:07:47 by amaisonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,10 @@ void	*ft_calloc(size_t ec, size_t es)
 	if (ec == 0 || es == 0)
 		return (malloc(0));
 	if ((ec * es) / es != ec)
-		return (NULL);
+		return (0);
 	ptr = (void *)malloc(ec * es);
-	ft_bzero(ptr, ec);
+	if (!ptr)
+		return (NULL);
+	ft_bzero(ptr, ec * es);
 	return (ptr);
 }
