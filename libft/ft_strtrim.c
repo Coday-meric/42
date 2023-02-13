@@ -6,7 +6,7 @@
 /*   By: amaisonn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 00:18:32 by amaisonn          #+#    #+#             */
-/*   Updated: 2023/02/10 17:00:11 by amaisonn         ###   ########.fr       */
+/*   Updated: 2023/02/12 19:40:07 by amaisonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,13 @@ size_t	ft_index(char const *s1, char const *set, size_t sens)
 			j++;
                 }
                 if (res != 1)
-                        return (i);
+			return (i);
 		if (sens == 0)
 			i++;
-		else
+		else if (i > 0)
 			i--;
+		else
+			return (0);
         }
 	return (i);
 }
@@ -46,10 +48,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*res;
 		
 	Id = ft_index(s1, set, 0);
+	if (Id == ft_strlen(s1))
+	{
+		res = malloc(1 * sizeof(char));
+		res[0] = '\0';
+		return (res);
+	}
 	If = ft_index(s1, set, ft_strlen(s1) - 1);
-	res = malloc((If - Id + 1) * sizeof(char));
-	if (!res)
-		return (NULL);
 	res = ft_substr(s1, Id, (If - Id + 1));
 	return (res);
 }

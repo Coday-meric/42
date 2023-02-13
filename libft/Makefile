@@ -6,13 +6,13 @@
 #    By: amaisonn <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/06 18:08:22 by amaisonn          #+#    #+#              #
-#    Updated: 2023/02/09 00:21:16 by amaisonn         ###   ########.fr        #
+#    Updated: 2023/02/12 18:05:20 by amaisonn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-SRC = ft_strtrim ft_strjoin ft_substr ft_strdup ft_calloc ft_isascii ft_isalpha ft_isdigit ft_isalnum ft_isprint ft_strlen ft_memset ft_bzero ft_memcpy ft_memmove ft_strlcpy ft_strlcat ft_toupper ft_tolower ft_strchr ft_strrchr ft_strncmp ft_memchr ft_memcmp ft_strnstr ft_atoi
+SRC = ft_itoa ft_strmapi ft_striteri ft_putchar_fd ft_putstr_fd ft_putendl_fd ft_putnbr_fd ft_strtrim ft_strjoin ft_substr ft_strdup ft_calloc ft_isascii ft_isalpha ft_isdigit ft_isalnum ft_isprint ft_strlen ft_memset ft_bzero ft_memcpy ft_memmove ft_strlcpy ft_strlcat ft_toupper ft_tolower ft_strchr ft_strrchr ft_strncmp ft_memchr ft_memcmp ft_strnstr ft_atoi
 
 SRCS = 	$(addsuffix .c, ${SRC})
 

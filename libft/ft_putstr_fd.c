@@ -6,7 +6,7 @@
 /*   By: amaisonn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 10:58:32 by amaisonn          #+#    #+#             */
-/*   Updated: 2023/02/12 11:02:10 by amaisonn         ###   ########.fr       */
+/*   Updated: 2023/02/12 18:18:08 by amaisonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putstr_fd(char *s, int fd)
 	if (s)
 		while (*s)
 		{
-			ft_putchar(*s, fd);
+			ft_putchar_fd(*s, fd);
 			s++;
 		}
 }
