@@ -5,19 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: amaisonn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/03 11:35:09 by amaisonn          #+#    #+#             */
-/*   Updated: 2023/02/13 13:51:34 by amaisonn         ###   ########.fr       */
+/*   Created: 2023/02/13 23:37:33 by amaisonn          #+#    #+#             */
+/*   Updated: 2023/02/13 23:43:57 by amaisonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	LIBFT_H
+#ifndef LIBFT_H
 # define LIBFT_H
 
 # include <unistd.h>
-# include <stdio.h>
 # include <stdlib.h>
 # include <string.h>
-# include <stddef.h>
 
 int		ft_atoi(const char *nptr);
 int		ft_isalnum(int c);

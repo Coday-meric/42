@@ -6,15 +6,15 @@
 /*   By: amaisonn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 17:06:43 by amaisonn          #+#    #+#             */
-/*   Updated: 2023/02/12 10:37:39 by amaisonn         ###   ########.fr       */
+/*   Updated: 2023/02/13 23:18:31 by amaisonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_len(long a)
+static size_t	ft_len(long a)
 {
-	size_t len;
+	size_t	len;
 
 	len = 0;
 	if (a < 0)
@@ -30,9 +30,10 @@ size_t	ft_len(long a)
 	return (len);
 }
 
-char	*ft_tab0(char *tab)
+static char	*ft_tab0(char *tab)
 {
-	if (!(tab = (char *)malloc(sizeof(char) * 2)))
+	tab = malloc(sizeof(char) * 2);
+	if (!tab)
 		return (NULL);
 	tab[0] = '0';
 	tab[1] = '\0';
@@ -50,7 +51,8 @@ char	*ft_itoa(int n)
 	tab = NULL;
 	if (a == 0)
 		return (ft_tab0(tab));
-	if (!(tab = (char *)malloc(sizeof(char) * (len + 1))))
+	tab = malloc(sizeof(char) * (len + 1));
+	if (!tab)
 		return (NULL);
 	tab[len--] = '\0';
 	if (a < 0)

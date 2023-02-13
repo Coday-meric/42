@@ -6,7 +6,7 @@
 /*   By: amaisonn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 11:05:31 by amaisonn          #+#    #+#             */
-/*   Updated: 2023/02/12 18:20:31 by amaisonn         ###   ########.fr       */
+/*   Updated: 2023/02/13 23:25:01 by amaisonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	if (n < 0)
 	{
-		n = n * - 1;
+		n = n * -1;
 		ft_putchar_fd('-', fd);
 	}
 	if (n >= 10)
@@ -36,7 +36,4 @@ void	ft_putnbr_fd(int n, int fd)
 		nb = n + '0';
 		ft_putchar_fd(nb, fd);
 	}
-
-
-
 }

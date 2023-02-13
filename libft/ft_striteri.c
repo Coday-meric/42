@@ -6,7 +6,7 @@
 /*   By: amaisonn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 10:49:16 by amaisonn          #+#    #+#             */
-/*   Updated: 2023/02/12 18:16:10 by amaisonn         ###   ########.fr       */
+/*   Updated: 2023/02/13 23:15:55 by amaisonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 
 	i = 0;
 	if (s)
+	{
 		while (s[i])
 		{
 			(*f)(i, s + i);
 			i++;
 		}
+	}
 }
