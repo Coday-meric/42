@@ -6,13 +6,13 @@
 /*   By: amaisonn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 13:27:00 by amaisonn          #+#    #+#             */
-/*   Updated: 2023/02/13 13:57:05 by amaisonn         ###   ########.fr       */
+/*   Updated: 2023/02/13 15:45:20 by amaisonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_nbrword(char const *s, char c)
+static int	ft_nbrword(char const *s, char c)
 {
 	size_t	i;
 	int	nbr;
@@ -28,7 +28,15 @@ int	ft_nbrword(char const *s, char c)
 	return (nbr);
 }
 
-char	*word(size_t i, size_t j)
+static char	*ft_strdup(const char *src, int lenrc)
+	char	*dest;
+
+	dest = malloc(lensrc);
+	if (!dest)
+		return (NULL);
+	ft_strlcpy(dest, (char *)src, lensrc);
+	return (dest);
+}
 
 char	**ft_split(char const *s, char c)
 {
@@ -47,7 +55,7 @@ char	**ft_split(char const *s, char c)
 	{
 		if (s[i] == c)
 		{
-			res[j] = malloc(((i - it) + 1) * sizeof(char));
+			res[j] = ft_strdup(s, (it - i));
 			it = i;
 			j++;
 		}
