@@ -6,7 +6,7 @@
 #    By: amaisonn <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/06 18:08:22 by amaisonn          #+#    #+#              #
-#    Updated: 2023/02/13 13:51:59 by amaisonn         ###   ########.fr        #
+#    Updated: 2023/02/14 11:00:17 by amaisonn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,6 @@ FLAG = -Wall -Wextra -Werror
 
 $(NAME):	${OBJS}
 			ar rc $(NAME) ${OBJS} 
-			ranlib $(NAME)
 
 all: $(NAME)
 
