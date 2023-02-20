@@ -6,7 +6,7 @@
 /*   By: amaisonn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 13:32:17 by amaisonn          #+#    #+#             */
-/*   Updated: 2023/02/20 14:47:59 by amaisonn         ###   ########.fr       */
+/*   Updated: 2023/02/20 19:52:36 by amaisonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	ft_strlcpy_modif(char *dest, char *src, int size)
 		}
 		dest[i] = '\0';
 	}
-	return (ft_strlen(src));
+	return (ft_strlen_modif(src));
 }
 
 int	ft_treatstack(char *stack)
