@@ -6,7 +6,7 @@
 /*   By: amaisonn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 13:32:17 by amaisonn          #+#    #+#             */
-/*   Updated: 2023/02/20 20:59:38 by amaisonn         ###   ########.fr       */
+/*   Updated: 2023/02/20 21:59:11 by amaisonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,10 @@ int	ft_strlen_modif(char *str)
 void	ft_strlcat_modif(char *dest, char *src, int size)
 {
 	int	td;
-	
+
 	td = ft_strlen_modif(src) - size + 1;
+	if (td < 0)
+		td = td * - 1;
 	while (td < size - 1)
 	{
 		dest[td] = *src;

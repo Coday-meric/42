@@ -6,7 +6,7 @@
 /*   By: amaisonn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 13:08:17 by amaisonn          #+#    #+#             */
-/*   Updated: 2023/02/20 19:51:03 by amaisonn         ###   ########.fr       */
+/*   Updated: 2023/02/20 21:59:30 by amaisonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@ char	*ft_realloc(char *stack, int newsize)
 {
 	char	*tmp;
 	int	ts;
-	
+
 	ts = ft_strlen_modif(stack);
 	tmp = malloc((ts + 1) * sizeof(char));
-	ft_strlcpy_modif(tmp, stack, ts);
+	ft_strlcpy_modif(tmp, stack, ts + 1);
 	free(stack);
 	stack = malloc(newsize * sizeof(char));
-	ft_strlcpy_modif(stack, tmp, ts);
+	ft_strlcpy_modif(stack, tmp, ts + 1);
 	free(tmp);
 	return (stack);
 }
