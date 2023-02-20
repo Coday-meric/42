@@ -6,7 +6,7 @@
 /*   By: amaisonn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 13:08:17 by amaisonn          #+#    #+#             */
-/*   Updated: 2023/02/20 21:59:30 by amaisonn         ###   ########.fr       */
+/*   Updated: 2023/02/20 22:05:39 by amaisonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ char	*get_next_line(int fd)
 	while (ft_treatstack(stack) == 0)
 	{
 		buff = malloc((BUFFER_SIZE + 1) * sizeof(char)); 
-		read(fd, buff, BUFFER_SIZE);
+		if (read(fd, buff, BUFFER_SIZE) == 0)
+			return (NULL);
 		buff[BUFFER_SIZE] = '\0';
 		newsize = (ft_strlen_modif(buff) + ft_strlen_modif(stack) + 1);
 		stack = ft_realloc(stack, newsize);
