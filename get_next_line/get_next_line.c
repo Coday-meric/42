@@ -6,7 +6,7 @@
 /*   By: amaisonn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 13:08:17 by amaisonn          #+#    #+#             */
-/*   Updated: 2023/02/20 14:47:37 by amaisonn         ###   ########.fr       */
+/*   Updated: 2023/02/20 19:08:15 by amaisonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*get_next_line(int fd)
 {
 	static char	*stack;
 	char	*buff;
-	char res[1000];
+	char	*res;
 	int	newsize;
 
 	if (!stack)
@@ -44,16 +44,14 @@ char	*get_next_line(int fd)
 		buff = malloc((BUFF_SIZE + 1) * sizeof(char)); 
 		read(fd, buff, BUFF_SIZE);
 		buff[BUFF_SIZE] = '\0';
-		printf("1 : BUFF : %s et STACK : %s |\n", buff, stack);
 		newsize = (ft_strlen_modif(buff) + ft_strlen_modif(stack) + 1);
 		stack = ft_realloc(stack, newsize);
 		ft_strlcat_modif(stack, buff, newsize);
 		free(buff);
 	}
+	res = malloc((ft_treatstack(stack) + 2) * sizeof(char));
+	ft_putnbr_fd((ft_treatstack(stack) + 2), 1);
 	ft_strlcpy_modif(res, stack, ft_treatstack(stack) + 2);
-	printf("1 : STACK : %s |\n", stack);
 	stack = ft_modifstack(stack, ft_treatstack(stack) + 1);
-	ft_putstr_fd(stack, 1);
-	printf("RES : %s", res);
-	return (stack);
+	return (res);
 }
