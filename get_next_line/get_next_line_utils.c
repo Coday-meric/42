@@ -6,7 +6,7 @@
 /*   By: amaisonn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 13:32:17 by amaisonn          #+#    #+#             */
-/*   Updated: 2023/02/20 21:59:11 by amaisonn         ###   ########.fr       */
+/*   Updated: 2023/02/21 19:28:28 by amaisonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	ft_strlcpy_modif(char *dest, char *src, int size)
 	return (ft_strlen_modif(src));
 }
 
-int	ft_treatstack(char *stack)
+int	ft_treatstack(char *stack, int r)
 {
 	int	i;
 	
@@ -66,7 +66,9 @@ int	ft_treatstack(char *stack)
 			return (i);
 		i++;
 	}
-	return (0);
+	if (r < BUFFER_SIZE)
+                return (ft_strlen_modif(stack) - 1);
+	return (-1);
 }
 
 char	*ft_modifstack(char *stack, int i)

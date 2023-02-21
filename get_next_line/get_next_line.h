@@ -23,7 +23,7 @@
 
 char *get_next_line(int fd);
 void ft_copy(char *src, char *dest);
-int ft_treatstack(char *stack);
+int ft_treatstack(char *stack, int r);
 int     ft_strlen_modif(char *str);
 void    ft_strlcat_modif(char *dest, char *src, int size);
 int     ft_strlcpy_modif(char *dest, char *src, int size);

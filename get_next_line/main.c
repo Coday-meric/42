@@ -3,10 +3,16 @@
 int	main()
 {
 	int fd;
+	char *res;
 	fd = open("test", O_RDWR);
-	printf("\nLine : %s \n", get_next_line(fd));
-	printf("Line2 : %s \n", get_next_line(fd));
-	printf("Line3 : %s \n", get_next_line(fd));
-	printf("Line4 : %s \n", get_next_line(fd));
-	printf("Line5 : %s \n", get_next_line(fd));
+	res = get_next_line(fd);
+	printf("RES : %s \n", res);
+	free(res);	
+	res = get_next_line(fd);
+	printf("RES 2: %s \n", res);
+	free(res);
+	res = get_next_line(fd);
+	printf("RES 3: %s \n", res);
+	free(res);	
+	return (0);
 }
