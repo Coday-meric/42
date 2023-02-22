@@ -64,25 +64,25 @@ char	*get_next_line(int fd)
 {
 	int			r;
 	char		*res;
-	static char	*stack;
+	static char	*stack[10000];
 
-	stack = ft_check_stack(stack);
+	stack[fd] = ft_check_stack(stack[fd]);
 	if (fd == -1 || read(fd, 0, 0) < 0)
 	{
-		free(stack);
-		stack = NULL;
+		free(stack[fd]);
+		stack[fd] = NULL;
 		return (NULL);
 	}
 	r = BUFFER_SIZE;
-	stack = ft_treatbuff(stack, fd, &r);
-	if (*stack == '\0')
+	stack[fd] = ft_treatbuff(stack[fd], fd, &r);
+	if (*stack[fd] == '\0')
 	{
-		free(stack);
-		stack = NULL;
+		free(stack[fd]);
+		stack[fd] = NULL;
 		return (NULL);
 	}
-	res = malloc((ft_treatstack(stack, r) + 2) * sizeof(char));
-	ft_strlcpy_modif(res, stack, ft_treatstack(stack, r) + 2);
-	stack = ft_modifstack(stack, ft_treatstack(stack, r) + 1);
+	res = malloc((ft_treatstack(stack[fd], r) + 2) * sizeof(char));
+	ft_strlcpy_modif(res, stack[fd], ft_treatstack(stack[fd], r) + 2);
+	stack[fd] = ft_modifstack(stack[fd], ft_treatstack(stack[fd], r) + 1);
 	return (res);
 }
