@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
-char	*ft_realloc(char *stack, int newsize)
+static char	*ft_realloc(char *stack, int newsize)
 {
 	int		ts;
 	char	*tmp;
@@ -27,7 +27,7 @@ char	*ft_realloc(char *stack, int newsize)
 	return (stack);
 }
 
-char	*ft_treatbuff(char *stack, int fd, int *r)
+static char	*ft_treatbuff(char *stack, int fd, int *r)
 {
 	int		newsize;
 	char	*buff;
@@ -50,7 +50,7 @@ char	*ft_treatbuff(char *stack, int fd, int *r)
 	return (stack);
 }
 
-char	*ft_check_stack(char *stack)
+static char	*ft_check_stack(char *stack)
 {
 	if (!stack)
 	{
@@ -63,6 +63,7 @@ char	*ft_check_stack(char *stack)
 char	*get_next_line(int fd)
 {
 	int			r;
+	int			t;
 	char		*res;
 	static char	*stack[10000];
 
@@ -81,8 +82,9 @@ char	*get_next_line(int fd)
 		stack[fd] = NULL;
 		return (NULL);
 	}
-	res = malloc((ft_treatstack(stack[fd], r) + 2) * sizeof(char));
-	ft_strlcpy_modif(res, stack[fd], ft_treatstack(stack[fd], r) + 2);
-	stack[fd] = ft_modifstack(stack[fd], ft_treatstack(stack[fd], r) + 1);
+	t = ft_treatstack(stack[fd], r);
+	res = malloc((t + 2) * sizeof(char));
+	ft_strlcpy_modif(res, stack[fd], t + 2);
+	stack[fd] = ft_modifstack(stack[fd], t + 1);
 	return (res);
 }

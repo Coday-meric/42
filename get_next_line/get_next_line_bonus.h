@@ -21,11 +21,8 @@
 int		ft_strlcpy_modif(char *dest, char *src, int size);
 int		ft_treatstack(char *stack, int r);
 int		ft_strlen_modif(char *str);
-void	ft_copy(char *src, char *dest);
 void	ft_strlcat_modif(char *dest, char *src, int size);
 char	*ft_modifstack(char *stack, int i);
-char	*ft_treatbuff(char *stack, int fd, int *r);
-char	*ft_check_stack(char *stack);
 char	*get_next_line(int fd);
 
 #endif
