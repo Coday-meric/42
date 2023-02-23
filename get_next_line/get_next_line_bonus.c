@@ -65,7 +65,7 @@ char	*get_next_line(int fd)
 	int			r;
 	int			t;
 	char		*res;
-	static char	*stack[10000];
+	static char	*stack[32767];
 
 	stack[fd] = ft_check_stack(stack[fd]);
 	if (fd == -1 || read(fd, 0, 0) < 0)

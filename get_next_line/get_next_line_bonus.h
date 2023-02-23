@@ -17,6 +17,11 @@
 # include <stdlib.h>
 # include <sys/types.h>
 # include <sys/stat.h>
+# include <stdio.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 10 
+# endif
 
 int		ft_strlcpy_modif(char *dest, char *src, int size);
 int		ft_treatstack(char *stack, int r);
