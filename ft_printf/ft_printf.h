@@ -18,10 +18,10 @@
 # include <stdint.h>
 # include <stdio.h>
 
-int     ft_printf(const char *str, ...);
-int	ft_toupper(int c);
-int	ft_tolower(int c);
-int	ft_isalpha(int c);
+int		ft_printf(const char *str, ...);
+int		ft_toupper(int c);
+int		ft_tolower(int c);
+int		ft_isalpha(int c);
 void	ft_putptr(unsigned long long nb, int *len);
 void	ft_putnbr_fdd(int n, int fd, int *len);
 void	ft_putnbr_unsign_fd(unsigned int n, int fd, int *len);

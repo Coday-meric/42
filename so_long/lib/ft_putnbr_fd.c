@@ -1,40 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putptr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amaisonn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/24 13:18:23 by amaisonn          #+#    #+#             */
-/*   Updated: 2023/02/24 13:18:32 by amaisonn         ###   ########.fr       */
+/*   Created: 2023/02/12 11:05:31 by amaisonn          #+#    #+#             */
+/*   Updated: 2023/02/13 23:25:01 by amaisonn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "libft.h"
 
-static void	ft_ptrhex(uintptr_t nb, int *len)
+void	ft_putnbr_fd(int n, int fd)
 {
-	if (nb >= 16)
+	char	nb;
+
+	if (n == -2147483648)
 	{
-		ft_ptrhex(nb / 16, len);
-		ft_ptrhex(nb % 16, len);
+		ft_putstr_fd("-2", fd);
+		n = 147483648;
+	}
+	if (n < 0)
+	{
+		n = n * -1;
+		ft_putchar_fd('-', fd);
+	}
+	if (n >= 10)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
 	}
 	else
 	{
-		if (nb <= 9)
-			ft_putchar_fd((nb + 48), 1, len);
-		else
-			ft_putchar_fd((nb - 10 + 'a'), 1, len);
-	}
-}
-
-void	ft_putptr(unsigned long long nb, int *len)
-{
-	if (nb == 0)
-		ft_putstr_fd("(nil)", 1, len);
-	else
-	{
-		ft_putstr_fd("0x", 1, len);
-		ft_ptrhex(nb, len);
+		nb = n + '0';
+		ft_putchar_fd(nb, fd);
 	}
 }

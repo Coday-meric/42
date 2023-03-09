@@ -7,7 +7,7 @@ INCMYLIB=./lib/
 
 NAME = so_long
 
-SRC = main.c map.c display.c $(INCLIN)get_next_line.c $(INCLIN)get_next_line_utils.c $(INCMYLIB)ft_strdup.c $(INCMYLIB)ft_strlen.c $(INCMYLIB)ft_strlcpy.c
+SRC = main.c map.c display.c hooks.c check_move.c $(INCLIN)get_next_line.c $(INCLIN)get_next_line_utils.c $(INCMYLIB)ft_strdup.c $(INCMYLIB)ft_strlen.c $(INCMYLIB)ft_strlcpy.c $(INCMYLIB)ft_putchar_fd.c $(INCMYLIB)ft_putnbr_fd.c $(INCMYLIB)ft_putstr_fd.c
 
 FLAG = -Wall -Werror -Wextra
 

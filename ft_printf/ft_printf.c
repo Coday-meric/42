@@ -36,9 +36,9 @@ static void	ft_printf_sort(char c, va_list printlist, int *len)
 
 int	ft_printf(const char *str, ...)
 {
-	size_t	i;
-	int	len;
-	va_list	printlist;
+	va_list		printlist;
+	size_t		i;
+	int			len;
 
 	i = 0;
 	len = 0;
