@@ -2,10 +2,12 @@
 INC=/usr/include
 
 INCLIB=$(INC)/../lib
+INCLIN=./get_next_line/
+INCMYLIB=./lib/
 
 NAME = so_long
 
-SRC = main.c 
+SRC = main.c map.c display.c $(INCLIN)get_next_line.c $(INCLIN)get_next_line_utils.c $(INCMYLIB)ft_strdup.c $(INCMYLIB)ft_strlen.c $(INCMYLIB)ft_strlcpy.c
 
 FLAG = -Wall -Werror -Wextra
 
